@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #ffc0cb, #ffe4e1);
+  color: #333;
+}
+
+/* Background layer */
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cloud {
+  position: absolute;
+  color: rgba(255, 255, 255);
+  animation: float 6s ease-in-out infinite alternate;
+}
+.cloud.small i { font-size: 4rem; }
+.cloud.medium i { font-size: 7rem; }
+.cloud.big i { font-size: 20rem; }
+
+.cloud i {
+  text-shadow: 5px 5px 15px rgba(255,255,255,0.6), -5px -5px 15px rgba(255,255,255,0.6), 0 0 20px rgba(255,182,193,0.4);
+}
+.cloud { opacity: 0.9; filter: blur(1px); }
+
+.cloud:nth-child(1) { top: 30%; left: 5%; animation-duration: 12s; }
+.cloud:nth-child(2) { top: 10%; left: 70%; animation-duration: 9s; }
+.cloud:nth-child(3) { top: 25%; left: 50%; animation-duration: 11s; }
+.cloud:nth-child(4) { top: 80%; left: 5%; animation-duration: 10s; }
+.cloud:nth-child(5) { top: 80%; left: 75%; animation-duration: 13s; }
+.cloud:nth-child(6) { top: 15%; left: 20%; animation-duration: 9s; }
+.cloud:nth-child(7) { top: 90%; left: 60%; animation-duration: 9s; }
+
+@keyframes float {
+  from { transform: translateY(0) translateX(0); }
+  to { transform: translateY(-20px) translateX(15px); }
+}
+
+/* Strawberry animation */
+#strawberry {
+  position: absolute;
+  top: 15%;
+  right: 100px;
+  width: 100px;
+  animation: bounce 3s infinite ease-in-out;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Header */
+#header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 25px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  color: rgb(255, 185, 197);
+  text-shadow: 2px 2px 6px #ffc0cb, -1px -1px 6px #fff0f5;
+}
+
+/* Nav bar */
+#nav-bar {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 20;
+}
+#nav-bar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style-type: none;
+  background-color: rgba(255, 255, 255,0.45);
+  border: 2px solid rgba(255, 255, 255,0.6);
+  box-shadow: 0 8px 20px rgba(255,182,193,0.3);
+  padding: 20px 15px;
+  border-radius: 25px;
+  width: 160px;
+}
+#nav-bar ul li {
+  font-size: 1.3rem;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  color: rgb(253, 166, 181);
+}
+#nav-bar ul li:hover {
+  background-color: white;
+  border: 2px solid rgb(248, 178, 188);
+  transform: scale(1.1);
+}
+
+/* Sections */
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+#allcontent { margin-top: 180px; padding: 20px; }
+
+/* Home content intro box */
+#home-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 50px;
+}
+#intro {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 30px;
+  padding: 30px 25px;
+  width: 55%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: swing 2s infinite alternate ease-in-out;
+}
+@keyframes swing { from { transform: translateY(0); } to { transform: translateY(-20px); } }
+#intro p { font-size: 1.05rem; line-height: 1.5; color: #555; }
+#intro button {
+  padding: 10px 28px;
+  background: linear-gradient(135deg, #ff9fc3, #ff6b9c);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(255,182,193,0.4);
+  transition: all 0.3s ease;
+}
+#intro button:hover {
+  background-color: rgb(255,185,197);
+  box-shadow: 0 6px 15px rgba(255,182,193,0.7);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #home-content { flex-direction: column; padding: 10px 20px; }
+  #intro, #nav-bar ul { width: 90%; max-width: 400px; margin-bottom: 15px; }
+}  
