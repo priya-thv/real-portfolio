@@ -1,22 +1,15 @@
- const navItems = document.querySelectorAll("#nav-bar li");
+const navItems = document.querySelectorAll("#nav-bar li");
 
-    for (let item of navItems) {
-      item.onclick = () => {
-        const section = document.getElementById(item.id);
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
-      };
+for (let item of navItems) {
+  item.addEventListener("click", () => {
+    const section = item.getAttribute(item.id); // get the section ID
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
     }
-
-document.querySelectorAll(".cta").forEach(el => {
-  el.addEventListener("click", event => {
-    const section = document.getElementById(item.id);
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
   });
-});
+}
+
+
 
 
 const sections = document.querySelectorAll("section");
