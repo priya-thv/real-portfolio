@@ -1,30 +1,19 @@
-const navItems = document.querySelectorAll("#nav-bar li");
+const sticks = [
+  document.getElementById("stick1"),
+  document.getElementById("stick2"),
+  document.getElementById("stick3"),
+  document.getElementById("stick4"),
+  document.getElementById("stick5")
+];
 
-for (let item of navItems) {
-  item.addEventListener("click", () => {
-    const section = item.getAttribute(item.id); // get the section ID
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-}
+let current = 0;
 
-
-
-
-const sections = document.querySelectorAll("section");
-
-function showSection(id) {
-  sections.forEach(sec => {
-    sec.style.display = (sec.id === id) ? "flex" : "none";
-  });
-}
-
-navItems.forEach(item => {
-  item.addEventListener("click", () => {
-    showSection(item.id);
-  });
-});
-
-// start by showing only home
-showSection("home");
+let stickInterval = setInterval(() => {
+  if (current < sticks.length) {
+    sticks[current].classList.add("show");
+    current++;
+  } else {
+    clearInterval(stickInterval);
+    window.location.href = "home.html";
+  }
+}, 800); // show one every 800ms

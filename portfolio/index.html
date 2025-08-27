@@ -1,105 +1,70 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="index.css">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Priya's Portfolio🎀</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh; /* full viewport height */
+      overflow: hidden; /* disables scroll */
+      background-color: pink;
+      color: white;
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div.container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      /* Make sure it doesn't stretch vertically beyond content */
+    }
+
+    .sticks {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      margin-bottom: 5px;
+    }
+
+    .stick {
+      width: 28px;
+      height: 100px;
+      background-color: white;
+      opacity: 0;
+      transform: scaleX(0);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .stick.show {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  </style>
 </head>
 <body>
-  <div id="background">
-  <div class="cloud big behind-intro"><i class="fa-solid fa-cloud"></i></div>
-  <div class="cloud small"><i class="fa-solid fa-cloud"></i></div>
-  <div class="cloud medium"><i class="fa-solid fa-cloud"></i></div>
-  <div class="cloud small"><i class="fa-solid fa-cloud"></i></div>
-  <div class="cloud medium"><i class="fa-solid fa-cloud"></i></div>
-  <img src="images/strawberry.webp" alt="strawberry" id="strawberry">
-</div>
-
-
-  <!-- Home -->
-  <section id="home">
-    <h1 id="header">Priya's Portfolio 🌸 </h1>
-    <div id="home-content">
-      <!-- Left box -->
-      <div id="intro">
-        <p>Hello! I’m a web developer and coder, passionate about creating cute and functional websites. Welcome to my little creative corner! 💖</p>
-        <button class="cta">Explore More</button>
-      </div>
-
-     <!-- Navbar -->
-<div id="nav-bar">
-  <ul>
-    <li id="home"><i class="fa-solid fa-house"></i></li>
-    <li id="about"><i class="fa-solid fa-user"></i></li>
-    <li id="skills"><i class="fa-solid fa-laptop-code"></i></li>
-    <li id="projects"><i class="fa-solid fa-diagram-project"></i></li>
-    <li id="education"><i class="fa-solid fa-school"></i></li>
-    <li id="contactme"><i class="fa-solid fa-phone"></i></li>
-  </ul>
-</div>
-
+  <div class="container">
+    <div class="sticks">
+      <div class="stick" id="stick1"></div>
+      <div class="stick" id="stick2"></div>
+      <div class="stick" id="stick3"></div>
+      <div class="stick" id="stick4"></div>
+      <div class="stick" id="stick5"></div>
     </div>
-  </section>
+    <h1>Loading....</h1>
+  </div>
 
-  <!-- About -->
-  <section class="aboutme" id="about">
-    <div id="top">
-    <h2 >About Me</h2>
-    <img src="images/birthday.jpg" alt="profile pic">
-    </div>
-  
-  <p id="con">Hello! I'm Priya 🌼. I’m a web developer who loves coding, solving problems, and building things that combine creativity with functionality. At the same time, I’m a self-aware and curious person who enjoys challenging myself—not just in debugging tricky code, but in learning new skills and exploring hobbies that keep me healthy and inspired.  
-  <br><br>
-  I love experimenting with ideas, discovering new design trends, and taking on projects that push me to grow. Whether it’s coding, trying a new hobby, or reflecting on self-improvement, I strive to stay curious, creative, and continually challenge myself in every aspect of life.</p>
-</section>
-
-
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Node.js</li>
-      <li>Express.js</li>
-      <li>Git & GitHub</li>
-      <li>MongoDB</li>
-      <li>Cpp</li>
-      <li>Python</li>
-      <li>C</li>
-      <li>Voiceflow</li>
-    </ul>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>Project 1</li>
-      <li>Project 2</li>
-    </ul>
-  </section>
-
-  <!-- Education -->
-  <section id="education">
-    <h2>Education</h2>
-    <p>Your education details here.</p>
-  </section>
-
-  <!-- Contact -->
-  <section id="contactme">
-    <h2>Contact Me</h2>
-    <p>Get in touch: priya@example.com</p>
-  </section>
-
-  <script src="index.js"></script>
-  
+  <script src="front.js"></script>
 </body>
-</html>  
+</html>
