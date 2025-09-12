@@ -80,3 +80,20 @@ cook.addEventListener('click', () => {
   }
 
   animateDot();
+
+
+const navLinks = document.querySelectorAll('.slider-nav a');
+const slider = document.querySelector('.slider');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSlide = document.getElementById(targetId);
+    slider.scrollTo({
+      left: targetSlide.offsetLeft,
+      behavior: 'smooth'
+    });
+  });
+});
+
