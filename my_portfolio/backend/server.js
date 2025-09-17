@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, "../portfolio")));
 
 // ✅ FIXED: Use "/*" instead of "*"
 app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, "../portfolio/home.html"));
+  res.sendFile(path.join(__dirname, "../portfolio/index.html"));
 });
 
 
